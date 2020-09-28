@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 消息队列注解，必须用唯一的枚举
  * @Author: linFeng
  * @Date: 2020/9/28 16:04
- * @Copyright: www.zektech.cn
+ *
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

@@ -8,7 +8,7 @@ import org.springframework.amqp.core.*;
 /**
  * @Author: linFeng
  * @Date: 2020/9/28 15:45
- * @Copyright: www.zektech.cn
+ *
  */
 @RabbitAnnotation(RabbitEnum.RABBIT)
 public class RabbitServiceImpl implements IRabbitService {

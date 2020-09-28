@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 /**
  * @Author: linFeng
  * @Date: 2020/9/28 14:42
- * @Copyright: www.zektech.cn
+ *
  */
 @Service
 public class MainServiceImpl implements IMainService {

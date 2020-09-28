@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * @Author: linFeng
  * @Date: 2020/9/28 14:27
- * @Copyright: www.zektech.cn
+ *
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

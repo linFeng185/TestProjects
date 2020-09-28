@@ -4,7 +4,7 @@ package com.lin.rabbit.enums;
  * rabbit的实现类枚举
  * @Author: linFeng
  * @Date: 2020/9/28 15:52
- * @Copyright: www.zektech.cn
+ *
  */
 public enum  RabbitEnum {
     /**
