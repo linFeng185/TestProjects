@@ -1,6 +1,7 @@
 package com.lin.rabbit.project.controller;
 
 import com.lin.rabbit.project.service.IMainService;
+import com.lin.rabbit.rabbit.service.PublishService;
 import com.lin.rabbit.rabbit.service.PushService;
 import com.lin.rabbit.rabbit.service.RabbitWorkService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ public class RabbitController {
     private PushService pushService;
     @Autowired
     private RabbitWorkService rabbitWorkService;
+    @Autowired
+    private PublishService publishService;
 
     @PostMapping("/helloWord")
     public String helloWord(){
@@ -45,6 +48,15 @@ public class RabbitController {
     @PostMapping("/work")
     public String work() throws InterruptedException {
         rabbitWorkService.work();
+        return "SUCCESS";
+    }
+
+    /**
+     * 发布，订阅模式
+     * @return
+     */
+    public String publish(){
+        publishService.publish();
         return "SUCCESS";
     }
 }
