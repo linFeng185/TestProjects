@@ -1,4 +1,4 @@
-package com.lin.rabbit.rabbit;
+package com.lin.rabbit.rabbit.config;
 
 import org.springframework.amqp.core.*;
 
@@ -7,7 +7,7 @@ import org.springframework.amqp.core.*;
  * @Date: 2020/9/28 15:34
  *
  */
-public interface IRabbitService {
+public interface IRabbitConfig {
 
 
     /**

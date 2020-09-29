@@ -1,6 +1,7 @@
 package com.lin.rabbit.project;
 
 import com.lin.rabbit.project.service.IMainService;
+import com.lin.rabbit.rabbit.service.PushService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +17,17 @@ public class Main {
     @Autowired
     private IMainService iMainService;
 
+    @Autowired
+    private PushService pushService;
+
     @PostMapping("/helloWord")
     public String helloWord(){
+        return iMainService.helloWord();
+    }
+
+    @PostMapping("/push")
+    public String push(){
+        pushService.push();
         return iMainService.helloWord();
     }
 }

@@ -8,9 +8,9 @@ package com.lin.rabbit.enums;
  */
 public enum  RabbitEnum {
     /**
-     *
+     *  测试队列
      */
-    RABBIT(0,"测试队列","","","","",""),;
+    RABBIT(0,"测试队列","rabbit.direct.routingKey.push","rabbit.direct.queue.push","rabbit.direct.exchange.push","",""),;
 
     /**
      * 唯一标识
