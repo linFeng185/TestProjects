@@ -3,7 +3,13 @@ package com.lin.rabbit.rabbit.impl;
 import com.lin.rabbit.annotation.RabbitAnnotation;
 import com.lin.rabbit.enums.RabbitEnum;
 import com.lin.rabbit.rabbit.IRabbitService;
+import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.support.AmqpHeaders;
+import org.springframework.messaging.handler.annotation.Header;
+
+import java.io.IOException;
 
 /**
  * @Author: linFeng
@@ -42,5 +48,17 @@ public class RabbitServiceImpl implements IRabbitService {
     @Override
     public TopicExchange topicExchange() {
         return null;
+    }
+
+    /**
+     * 微信推送队列的监听
+     * @param
+     * @param channel
+     * @param tag
+     * @throws IOException
+     */
+    @RabbitListener(queues = "rabbit.direct.queue.push")
+    public void processDirect(String str, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
+        channel.basicAck(tag,true);
     }
 }
