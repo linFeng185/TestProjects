@@ -26,7 +26,8 @@ public class PublishService {
      * 发布消息
      */
     public void publish() {
-        rabbitTemplate.convertAndSend(RabbitEnum.WORK.getDirectExchange(), null,"helloWord");
+        System.out.println("发送消息");
+        rabbitTemplate.convertAndSend(RabbitEnum.WORK.getDirectExchange(), RabbitEnum.WORK.getDirectExchange(),"helloWord");
     }
 
     /**

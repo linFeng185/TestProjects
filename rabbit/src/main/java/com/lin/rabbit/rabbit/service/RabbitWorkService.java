@@ -32,7 +32,7 @@ public class RabbitWorkService {
         for (int i=0;i<20;i++){
             rabbitTemplate.convertAndSend(RabbitEnum.WORK.getDirectExchange(), RabbitEnum.WORK.getRoutingKey(),"helloWord");
             //每发布一条消息，休眠一段时间
-            Thread.sleep(i * 20);
+//            Thread.sleep(i * 20);
         }
     }
 
@@ -47,7 +47,7 @@ public class RabbitWorkService {
     public void consume(String str, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException, InterruptedException {
         System.out.println("1：收到消息"+str);
         channel.basicAck(tag,true);
-        Thread.sleep(100);
+//        Thread.sleep(100);
     }
 
     /**
@@ -61,6 +61,6 @@ public class RabbitWorkService {
     public void consume2(String str, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException, InterruptedException {
         System.out.println("2：收到消息"+str);
         channel.basicAck(tag,true);
-        Thread.sleep(200);
+//        Thread.sleep(200);
     }
 }

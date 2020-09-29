@@ -55,6 +55,7 @@ public class RabbitController {
      * 发布，订阅模式
      * @return
      */
+    @PostMapping("/publish")
     public String publish(){
         publishService.publish();
         return "SUCCESS";
