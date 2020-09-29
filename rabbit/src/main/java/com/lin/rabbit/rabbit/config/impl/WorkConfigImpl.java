@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author: linFeng
+ * @Author: lin
  * @Date: 2020/9/29 17:45
- * @Copyright: www.zektech.cn
+ *
  */
 @Configuration
 public class WorkConfigImpl implements IRabbitConfig {

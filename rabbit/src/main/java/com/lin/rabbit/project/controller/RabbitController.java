@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author: linFeng
+ * @Author: lin
  * @Date: 2020/9/29 17:41
- * @Copyright: www.zektech.cn
+ *
  */
 @RestController
 public class RabbitController {
