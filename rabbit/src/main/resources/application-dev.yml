@@ -14,3 +14,7 @@ spring:
     #rabbit项目名，每个virtualHost的队列是隔离的，相当于数据库
     virtual-host: /rabbit
     publisher-confirms: true
+    listener:
+      direct:
+        #设置监听为手动答应模式
+        acknowledge-mode: manual
