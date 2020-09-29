@@ -2,7 +2,7 @@ package com.lin.rabbit.enums;
 
 /**
  * rabbit的实现类枚举
- * @Author: linFeng
+ * @Author:  lin
  * @Date: 2020/9/28 15:52
  *
  */
@@ -10,10 +10,14 @@ public enum  RabbitEnum {
     /**
      *  测试队列
      */
-    RABBIT(0,"测试队列","rabbit.direct.routingKey.push","rabbit.direct.queue.push","rabbit.direct.exchange.push","",""),;
-
+    RABBIT(0,"测试队列","rabbit.direct.routingKey.push","rabbit.direct.queue.push","rabbit.direct.exchange.push","",""),
     /**
-     * 唯一标识
+     * work模式
+     */
+    WORK(1,"work模式","rabbit.direct.routingKey.work","rabbit.direct.queue.work","rabbit.direct.exchange.work","","");
+    ;
+    /**
+     * 标识
      */
     private int id;
 

@@ -3,7 +3,7 @@ package com.lin.rabbit.rabbit.config;
 import org.springframework.amqp.core.*;
 
 /**
- * @Author: linFeng
+ * @Author:  lin
  * @Date: 2020/9/28 15:34
  *
  */
