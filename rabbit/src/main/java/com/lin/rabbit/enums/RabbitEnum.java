@@ -16,13 +16,13 @@ public enum  RabbitEnum {
      */
     WORK(1,"work模式","rabbit.direct.routingKey.work","rabbit.direct.queue.work","rabbit.direct.exchange.work","",""),
     /**
-     * 发布，订阅模式，需要两个，因为需要两个队列，两个消费者，一个相同的交换机
+     * 发布，订阅模式，需要两个，因为需要两个队列，一个相同的交换机
      */
-    PUBLISH(2,"发布，订阅模式","rabbit.direct.routingKey.publish1","rabbit.direct.queue.publish1","rabbit.direct.exchange.publish","",""),
+    PUBLISH(3,"发布，订阅模式",null,"rabbit.fanout.queue.publish1",null,"rabbit.fanout.exchange.publish",null),
     /**
      * 发布，订阅模式
      */
-    PUBLISH2(3,"发布，订阅模式","rabbit.direct.routingKey.publish2","rabbit.direct.queue.publish2","rabbit.direct.exchange.publish","",""),
+    PUBLISH2(3,"发布，订阅模式",null,"rabbit.fanout.queue.publish2",null,"rabbit.fanout.exchange.publish",null),
 
     ;
     /**

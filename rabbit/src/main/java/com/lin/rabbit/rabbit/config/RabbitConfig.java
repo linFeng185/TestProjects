@@ -1,12 +1,9 @@
-package com.lin.rabbit.rabbit.config.impl;
+package com.lin.rabbit.rabbit.config;
 
 import com.lin.rabbit.enums.RabbitEnum;
-import com.lin.rabbit.rabbit.config.IRabbitConfig;
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.io.IOException;
 
 /**
  * @Author:  lin
@@ -14,15 +11,13 @@ import java.io.IOException;
  *
  */
 @Configuration
-public class RabbitConfigImpl implements IRabbitConfig {
+public class RabbitConfig {
 
-    @Override
     @Bean
     public Binding bindingExchange() {
         return BindingBuilder.bind(queue()).to(directExchange()).with(RabbitEnum.RABBIT.getRoutingKey());
     }
 
-    @Override
     @Bean
     public Queue queue() {
         // durable:是否持久化,默认是false,持久化队列：会被存储在磁盘上，当消息代理重启时仍然存在，暂存队列：当前连接有效
@@ -32,19 +27,8 @@ public class RabbitConfigImpl implements IRabbitConfig {
         return new Queue(RabbitEnum.RABBIT.getQueue(),true);
     }
 
-    @Override
     @Bean
     public DirectExchange directExchange() {
-        return new DirectExchange(RabbitEnum.RABBIT.getDirectExchange(),true,false);
-    }
-
-    @Override
-    public FanoutExchange fanoutExchange() {
-        return null;
-    }
-
-    @Override
-    public TopicExchange topicExchange() {
-        return null;
+        return new DirectExchange(RabbitEnum.RABBIT.getDirectExchange(), true, false);
     }
 }

@@ -27,7 +27,7 @@ public class PublishService {
      */
     public void publish() {
         System.out.println("发送消息");
-        rabbitTemplate.convertAndSend(RabbitEnum.WORK.getDirectExchange(), null,"helloWord");
+        rabbitTemplate.convertAndSend(RabbitEnum.PUBLISH.getFanoutExchange(), null,"helloWord");
     }
 
     /**
@@ -37,7 +37,7 @@ public class PublishService {
      * @param tag
      * @throws IOException
      */
-    @RabbitListener(queues = "rabbit.direct.queue.publish1")
+    @RabbitListener(queues = "rabbit.fanout.queue.publish1")
     public void consume1(String str, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
         System.out.println("1：收到消息"+str);
         channel.basicAck(tag,true);
@@ -50,7 +50,7 @@ public class PublishService {
      * @param tag
      * @throws IOException
      */
-    @RabbitListener(queues = "rabbit.direct.queue.publish2")
+    @RabbitListener(queues = "rabbit.fanout.queue.publish2")
     public void consume2(String str, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
         System.out.println("2：收到消息"+str);
         channel.basicAck(tag,true);
