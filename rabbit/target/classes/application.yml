@@ -1,7 +1,0 @@
-server:
-  port: 8080 #请求端口号
-  servlet:
-    context-path: /rabbit #请求前缀
-spring:
-  profiles:
-    active: dev
