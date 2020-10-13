@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 工作模式（资源竞争）
  * @Author: lin
  * @Date: 2020/9/29 17:45
  *

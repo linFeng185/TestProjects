@@ -6,12 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 发布订阅模式
  * @Author: lin
  * @Date: 2020/9/29 18:29
  *
  */
 @Configuration
-public class Publish1Config {
+public class PublishConfig {
 
     @Bean
     public Binding bindingPublishExchange1() {
@@ -26,5 +27,20 @@ public class Publish1Config {
     @Bean
     public FanoutExchange publishFanoutExchange1() {
         return new FanoutExchange(RabbitEnum.PUBLISH.getFanoutExchange(),true,false);
+    }
+
+    @Bean
+    public Binding bindingPublishExchange2() {
+        return BindingBuilder.bind(publishQueue2()).to(publishFanoutExchange2());
+    }
+
+    @Bean
+    public Queue publishQueue2() {
+        return new Queue(RabbitEnum.PUBLISH2.getQueue(),true);
+    }
+
+    @Bean
+    public FanoutExchange publishFanoutExchange2() {
+        return new FanoutExchange(RabbitEnum.PUBLISH2.getFanoutExchange(),true,false);
     }
 }

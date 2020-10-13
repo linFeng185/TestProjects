@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 简单模式
  * @Author:  lin
  * @Date: 2020/9/28 15:45
  *
@@ -13,11 +14,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
 
+    /**
+     * 将队列绑定到交换机中，并绑定消费者
+     * @return
+     */
     @Bean
     public Binding bindingExchange() {
         return BindingBuilder.bind(queue()).to(directExchange()).with(RabbitEnum.RABBIT.getRoutingKey());
     }
 
+    /**
+     * 创建队列
+     * @return
+     */
     @Bean
     public Queue queue() {
         // durable:是否持久化,默认是false,持久化队列：会被存储在磁盘上，当消息代理重启时仍然存在，暂存队列：当前连接有效
@@ -27,8 +36,14 @@ public class RabbitConfig {
         return new Queue(RabbitEnum.RABBIT.getQueue(),true);
     }
 
+    /**
+     * 创建交换机
+     * @return
+     */
     @Bean
     public DirectExchange directExchange() {
+        // autoDelete:是否自动删除，当没有生产者或者消费者使用此队列，该队列会自动删除。
+        // durable:是否持久化,默认是false,持久化队列：会被存储在磁盘上，当消息代理重启时仍然存在，暂存队列：当前连接有效
         return new DirectExchange(RabbitEnum.RABBIT.getDirectExchange(), true, false);
     }
 }
