@@ -9,8 +9,8 @@ spring:
     # rabbit端口号
     port: 5672
     # 用户账号和密码
-    username: lin
-    password: 123456
+    username: guest
+    password: guest
     #rabbit项目名，每个virtualHost的队列是隔离的，相当于数据库
     virtual-host: /rabbit
     publisher-confirms: true

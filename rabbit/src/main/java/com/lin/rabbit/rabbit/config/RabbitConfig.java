@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConfig {
 
     /**
-     * 将队列绑定到交换机中，并绑定消费者
+     * 将队列绑定到交换机中，并绑定路由
      * @return
      */
     @Bean

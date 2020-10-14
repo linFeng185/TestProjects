@@ -23,7 +23,10 @@ public enum  RabbitEnum {
      * 发布，订阅模式
      */
     PUBLISH2(3,"发布，订阅模式",null,"rabbit.fanout.queue.publish2",null,"rabbit.fanout.exchange.publish",null),
-
+    /**
+     * 路由模式
+     */
+    ROUTING(4,"路由模式","rabbit.direct.routingKey.routing","rabbit.direct.queue.routing","rabbit.direct.exchange.routing",null,null),
     ;
     /**
      * 标识
@@ -36,7 +39,7 @@ public enum  RabbitEnum {
     private String name;
 
     /**
-     * 消费者
+     * 路由键
      */
     private String routingKey;
 

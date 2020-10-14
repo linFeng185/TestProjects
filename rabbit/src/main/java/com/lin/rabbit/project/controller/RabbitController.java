@@ -4,6 +4,7 @@ import com.lin.rabbit.project.service.IMainService;
 import com.lin.rabbit.rabbit.service.PublishService;
 import com.lin.rabbit.rabbit.service.PushService;
 import com.lin.rabbit.rabbit.service.RabbitWorkService;
+import com.lin.rabbit.rabbit.service.RoutingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +25,8 @@ public class RabbitController {
     private RabbitWorkService rabbitWorkService;
     @Autowired
     private PublishService publishService;
+    @Autowired
+    private RoutingService routingService;
 
     @PostMapping("/helloWord")
     public String helloWord(){
@@ -58,6 +61,16 @@ public class RabbitController {
     @PostMapping("/publish")
     public String publish(){
         publishService.publish();
+        return "SUCCESS";
+    }
+
+    /**
+     * 路由模式
+     * @return
+     */
+    @PostMapping("/routing")
+    public String routing(){
+        routingService.routing();
         return "SUCCESS";
     }
 }
