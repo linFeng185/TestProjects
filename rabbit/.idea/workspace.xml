@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9ff40a5-f8b4-4cfc-8ff3-1fae60f1b2e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RoutingConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RoutingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/ThemeConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/ThemeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/enums/RabbitEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/enums/RabbitEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/project/controller/RabbitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/project/controller/RabbitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RabbitConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RoutingConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RoutingConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RoutingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RoutingService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,14 +37,69 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RoutingConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="47" column="87" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="87" />
+            <state relative-caret-position="144">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1159#1160#0" expanded="true" />
-                <element signature="e#1227#1228#0" expanded="true" />
-                <element signature="e#1598#1599#0" expanded="true" />
-                <element signature="e#1666#1667#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RabbitConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="35" column="53" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/PublishConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-388">
+              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/ThemeConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="15" column="54" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="15" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
+                <element signature="e#814#815#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/enums/RabbitEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/ThemeService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,32 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RoutingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-65">
-              <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/project/controller/RabbitController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/PushService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="35" />
+            <state relative-caret-position="684">
+              <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,7 +120,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RabbitWorkService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="482">
               <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="46" selection-end-column="96" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -98,20 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/enums/RabbitEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="24" column="80" lean-forward="true" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RabbitConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/project/controller/RabbitController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="35" column="53" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="53" />
+            <state relative-caret-position="657">
+              <caret line="77" column="32" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,10 +161,11 @@
       <find>RABBIT</find>
       <find>RabbitTemplate()</find>
       <find>linFeng</find>
-      <find>@Copyright: www.zektech.cn</find>
       <find>406</find>
       <find>@Override</find>
       <find>implements IRabbitConfig</find>
+      <find>@Copyright: www.zektech.cn</find>
+      <find>@Author: linFeng</find>
     </findStrings>
     <replaceStrings>
       <replace>push</replace>
@@ -153,6 +176,8 @@
       <replace />
       <replace>//@Override</replace>
       <replace />
+      <replace>@Author: lin</replace>
+      <replace>@Author: lin</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -195,10 +220,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/PushService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RabbitConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/enums/RabbitEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RoutingConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RoutingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/enums/RabbitEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/ThemeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/project/controller/RabbitController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/ThemeConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RoutingConfig.java" />
       </list>
     </option>
   </component>
@@ -315,27 +342,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="rabbit" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rabbit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rabbit" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rabbit" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rabbit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rabbit" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rabbit" type="462c0819:PsiDirectoryNode" />
               <item name="rabbit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -393,7 +399,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602660917685" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1602665324754" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="D:/4.广发幼儿园/1.源码管理/api/branches/v2.4/kms-api" />
@@ -515,7 +521,7 @@
       <workItem from="1602486132576" duration="4005000" />
       <workItem from="1602552083785" duration="1194000" />
       <workItem from="1602571109706" duration="6524000" />
-      <workItem from="1602639936459" duration="6776000" />
+      <workItem from="1602639936459" duration="11817000" />
     </task>
     <task id="LOCAL-00001" summary="修复了启动报错的问题">
       <created>1601344754272</created>
@@ -587,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602572408249</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="增加了路由模式的代码">
+      <created>1602660977783</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602660977784</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -623,7 +636,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57373000" />
+    <option name="totallyTimeSpent" value="62414000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -636,7 +649,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27345845" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -687,7 +699,8 @@
     <MESSAGE value="删除了无用文件" />
     <MESSAGE value="增加了发布，订阅模式的代码" />
     <MESSAGE value="优化了发布订阅模式的类文件&#10;直连模式增加了步骤注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化了发布订阅模式的类文件&#10;直连模式增加了步骤注释" />
+    <MESSAGE value="增加了路由模式的代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了路由模式的代码" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.3.1.RELEASE/spring-boot-autoconfigure-2.3.1.RELEASE.jar!/org/springframework/boot/autoconfigure/web/ServerProperties.class" />
@@ -830,16 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/PublishConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/PublishService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -854,40 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RoutingConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="47" column="87" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1159#1160#0" expanded="true" />
-            <element signature="e#1227#1228#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RabbitWorkService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="46" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RabbitConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="35" column="53" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -916,18 +885,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/project/controller/RabbitController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="71" column="21" lean-forward="true" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RoutingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
+        <state relative-caret-position="657">
+          <caret line="77" column="32" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -936,8 +895,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/enums/RabbitEnum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="24" column="80" lean-forward="true" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="80" />
+        <state relative-caret-position="284">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/ThemeConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" column="54" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/ThemeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RoutingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/service/RabbitWorkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="46" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RoutingConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/RabbitConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="35" column="53" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lin/rabbit/rabbit/config/PublishConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-388">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,10 +1,7 @@
 package com.lin.rabbit.project.controller;
 
 import com.lin.rabbit.project.service.IMainService;
-import com.lin.rabbit.rabbit.service.PublishService;
-import com.lin.rabbit.rabbit.service.PushService;
-import com.lin.rabbit.rabbit.service.RabbitWorkService;
-import com.lin.rabbit.rabbit.service.RoutingService;
+import com.lin.rabbit.rabbit.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +24,8 @@ public class RabbitController {
     private PublishService publishService;
     @Autowired
     private RoutingService routingService;
+    @Autowired
+    private ThemeService themeService;
 
     @PostMapping("/helloWord")
     public String helloWord(){
@@ -71,6 +70,17 @@ public class RabbitController {
     @PostMapping("/routing")
     public String routing(){
         routingService.routing();
+        return "SUCCESS";
+    }
+
+    /**
+     * 主题模式
+     * @param routingKey 要发送的路由键
+     * @return
+     */
+    @PostMapping("/theme")
+    public String theme(String routingKey) {
+        themeService.theme(routingKey);
         return "SUCCESS";
     }
 }

@@ -27,6 +27,10 @@ public enum  RabbitEnum {
      * 路由模式
      */
     ROUTING(4,"路由模式","rabbit.direct.routingKey.routing","rabbit.direct.queue.routing","rabbit.direct.exchange.routing",null,null),
+    /**
+     * 主题模式
+     */
+    THEME(5,"主题模式","rabbit.topic.routingKey.theme","rabbit.topic.queue.theme",null,null,"rabbit.topic.exchange.theme"),
     ;
     /**
      * 标识

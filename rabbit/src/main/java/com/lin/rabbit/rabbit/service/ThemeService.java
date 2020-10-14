@@ -13,22 +13,24 @@ import java.io.IOException;
 
 /**
  * @Author: lin
- * @Date: 2020/10/14 15:17
+ * @Date: 2020/10/14 15:45
  *
  */
 @Service
-public class RoutingService {
+public class ThemeService {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
     /**
      * 发送消息
+     * @param routingKey 要发送到的路由键
      */
-    public void routing(){
-        //将消息发送至绑定了该路由的队列中
+    public void theme(String routingKey){
+        //#：代表一个单词
+        //*：代表多个单词
         System.out.println("发送消息");
-        rabbitTemplate.convertAndSend(RabbitEnum.ROUTING.getDirectExchange(),RabbitEnum.ROUTING.getRoutingKey(),"路由");
+        rabbitTemplate.convertAndSend(RabbitEnum.THEME.getTopicExchange(),routingKey,"主题");
     }
 
     /**
@@ -37,9 +39,9 @@ public class RoutingService {
      * @param channel
      * @param tag
      */
-    @RabbitListener(queues = "rabbit.direct.queue.routing")
+    @RabbitListener(queues = "rabbit.topic.queue.theme")
     public void consume(String str, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
-        System.out.println("routing收到消息："+str);
+        System.out.println("theme收到消息："+str);
         channel.basicAck(tag,true);
     }
 
@@ -49,21 +51,21 @@ public class RoutingService {
      * @param channel
      * @param tag
      */
-    @RabbitListener(queues = "rabbit.direct.queue.routing2")
+    @RabbitListener(queues = "rabbit.topic.queue.theme2")
     public void consume2(String str, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
-        System.out.println("routing2收到消息："+str);
+        System.out.println("theme2收到消息："+str);
         channel.basicAck(tag,true);
     }
-
     /**
      * 监听消息
      * @param str
      * @param channel
      * @param tag
      */
-    @RabbitListener(queues = "rabbit.direct.queue.routing3")
+    @RabbitListener(queues = "rabbit.topic.queue.theme3")
     public void consume3(String str, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
-        System.out.println("routing3收到消息："+str);
+        System.out.println("theme3收到消息："+str);
         channel.basicAck(tag,true);
     }
+
 }

@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * routing路由模式
- * @Author: linFeng
+ * 创建多个队列，多个队列可以绑定同样的路由键，生产者发布消息后，交换机根据路由键匹配相应的队列
+ * @Author: lin
  * @Date: 2020/10/13 15:06
  */
 @Configuration
