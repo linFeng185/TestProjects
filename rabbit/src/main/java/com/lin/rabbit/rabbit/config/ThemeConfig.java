@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 主题模式创建队列和交换机
  * 创建一个交换机，三个队列，队列的路由都不相同，发送消息时用路由键和通配符模糊匹配相应的队列，用.分隔
- * #：可以匹配任意数量的分隔位数量
- * *：只能匹配一个分隔位的数量
+ * #：可以匹配任意数量的分隔位
+ * *：只能匹配一个分隔位
  * 例如 a.*只能匹配到a.XXX，而不能匹配到a.XXX.XXX 而a.#可以匹配到a.XXX.XXX
  * @Author: lin
  * @Date: 2020/10/14 15:45
