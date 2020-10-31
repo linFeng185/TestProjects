@@ -27,7 +27,7 @@ public class RabbitController {
     @Autowired
     private ThemeService themeService;
 
-    @PostMapping("/helloWord")
+    @PostMapping("/helloWorld")
     public String helloWord(){
         return iMainService.helloWord();
     }

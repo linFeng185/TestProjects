@@ -29,7 +29,7 @@ public class PushService {
     public void push(){
         System.out.println("开始推送");
         //将消息携带绑定键值：TestDirectRouting 发送到交换机TestDirectExchange
-        rabbitTemplate.convertAndSend(RabbitEnum.RABBIT.getDirectExchange(), RabbitEnum.RABBIT.getRoutingKey(),"helloWord", new CorrelationData("1"));
+        rabbitTemplate.convertAndSend(RabbitEnum.RABBIT.getDirectExchange(), RabbitEnum.RABBIT.getRoutingKey(),"helloWorld", new CorrelationData("1"));
 //        return "ok";
         System.out.println("结束推送");
     }
