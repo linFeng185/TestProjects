@@ -28,9 +28,15 @@ public @interface Excel {
     String dateFormat() default "";
 
     /**
+     * 日期时间格式，用的jdk8的时间类，感觉两个格式字段有些多余了，但是Date类型操作起来没有LocalDate方便，先试试，不行就换
+     * @return
+     */
+    String dateTimeFormat() default "";
+
+    /**
      * 列高
      */
-    int height() default 10;
+    int height() default 20;
 
     /**
      * 列宽
@@ -63,11 +69,6 @@ public @interface Excel {
     String valueConvert() default "";
 
     /**
-     * 下拉选择框内容
-     */
-    String [] selectBox() default {};
-
-    /**
      * 前缀
      */
     String prefix() default "";
@@ -81,4 +82,9 @@ public @interface Excel {
      * 是否只读
      */
     boolean isReadOnly() default false;
+
+    /**
+     * 是否需要判空
+     */
+    boolean isBlank() default false;
 }

@@ -1,14 +1,20 @@
 package com.lin;
 
+import com.lin.entity.Entity;
+import com.lin.util.ExcelUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * @Author: linFeng
+ * @Author: lin
  * @Date: 2021/1/29 17:06
- * @Copyright: www.zektech.cn
  */
 @RestController
 public class Main {
@@ -18,7 +24,18 @@ public class Main {
      * @return
      */
     @GetMapping
-    public String export(){
+    public String export() throws IllegalAccessException {
+        ExcelUtil<Entity> util=new ExcelUtil<>(Entity.class);
+        List<Entity> data=new ArrayList<>();
+        Entity entity=new Entity();
+        entity.setAge(1);
+        entity.setBirthday(LocalDate.now());
+        entity.setBodyWeight(1D);
+        entity.setName("名称");
+        entity.setSex(1);
+        entity.setTime(LocalDateTime.now());
+        data.add(entity);
+        util.export(data,"111.xlsx","标题");
         return "SUCCESS";
     }
 
