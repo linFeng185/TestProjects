@@ -27,14 +27,16 @@ public class Main {
     public String export() throws IllegalAccessException {
         ExcelUtil<Entity> util=new ExcelUtil<>(Entity.class);
         List<Entity> data=new ArrayList<>();
-        Entity entity=new Entity();
-        entity.setAge(1);
-        entity.setBirthday(LocalDate.now());
-        entity.setBodyWeight(1D);
-        entity.setName("名称");
-        entity.setSex(1);
-        entity.setTime(LocalDateTime.now());
-        data.add(entity);
+        for (int i=0;i<10;i++){
+            Entity entity=new Entity();
+            entity.setAge(i);
+            entity.setBirthday(LocalDate.now());
+            entity.setBodyWeight((double) i);
+            entity.setName("名称"+i);
+            entity.setSex(1);
+            entity.setTime(LocalDateTime.now());
+            data.add(entity);
+        }
         util.export(data,"111.xlsx","标题");
         return "SUCCESS";
     }

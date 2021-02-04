@@ -102,7 +102,7 @@ public class ExcelUtil <T>{
         for (int i=0;i<=sheetNum;i++){
             if(i>0){
                 sheet=wb.createSheet(sheetName+i);
-                rowBeginIndex+=SHEET_MAX_NUM+1;
+                rowBeginIndex+=SHEET_MAX_NUM;
             }
             //创建标题
             if(titleMergeCellNum>0){
@@ -117,12 +117,13 @@ public class ExcelUtil <T>{
             SXSSFRow fieldRow=createRow(1);
             //单元格下标
             int listSize= fieldAndExcelList.size();
+            CellStyle fieldStyle=style.get("field");
             for (int i2=0;i2<listSize;i2++){
                 Excel excelObj=(Excel) fieldAndExcelList.get(i2)[1];
                 if(judgeStrMap.get(excelObj.judgeStr())!=null){
                     continue;
                 }
-                createCell(fieldRow,i2,excelObj.name(),excelObj,style.get("field"));
+                createCell(fieldRow,i2,excelObj.name(),excelObj,fieldStyle);
                 sheet.setColumnWidth(i2,excelObj.width()*256);
             }
             importData(dataList,rowBeginIndex);
@@ -172,15 +173,20 @@ public class ExcelUtil <T>{
 
     private void importData(List<T> dataList,int beginIndex) throws IllegalAccessException {
         int dataListSize=dataList.size();
-        for (int i=beginIndex;i<dataListSize && i<beginIndex+SHEET_MAX_NUM;i++){
+        //获取数据单元格样式
+        CellStyle dataStyle=style.get("data");
+        //数据行开始下标
+        int rowIndex=DATA_BEGIN_INDEX;
+        //字段集合长度（用来创建列）
+        int fieldListLength= fieldAndExcelList.size();
+        for (int i=beginIndex;i<dataListSize && i<beginIndex+SHEET_MAX_NUM;i++,rowIndex++){
             T dataObj=dataList.get(i);
-            SXSSFRow row=createRow(DATA_BEGIN_INDEX+i);
-            int listSize= fieldAndExcelList.size();
-            for (int i2=0;i<listSize;i++){
+            SXSSFRow row=createRow(rowIndex);
+            for (int i2=0;i2<fieldListLength;i2++){
                 Field field=(Field) fieldAndExcelList.get(i2)[0];
                 field.setAccessible(true);
                 Object object=field.get(dataObj);
-                createCell(row,i2,object,(Excel) fieldAndExcelList.get(i2)[1],style.get("data"));
+                createCell(row,i2,object,(Excel) fieldAndExcelList.get(i2)[1],dataStyle);
             }
         }
     }
@@ -307,6 +313,9 @@ public class ExcelUtil <T>{
         style.put("field",field);
         CellStyle data=wb.createCellStyle();
         setBorderStyle(data);
+        DataFormat dataFormat =wb.createDataFormat();
+        //默认为文本类型
+        data.setDataFormat(dataFormat.getFormat("@"));
         //数据
         style.put("data",data);
     }
