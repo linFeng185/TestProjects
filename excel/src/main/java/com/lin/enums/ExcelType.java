@@ -7,7 +7,7 @@ package com.lin.enums;
 public enum  ExcelType {
 
     /**
-     * 类型：0导入，1导出，2导入导出
+     * 类型：0导出，1导入，2导入导出
      */
     IS_EXPORT(0)
     ,IS_IMPORT(1)

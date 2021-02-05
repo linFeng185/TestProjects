@@ -1,6 +1,7 @@
 package com.lin.util;
 
 import com.lin.annotation.Excel;
+import com.lin.enums.ExcelType;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.streaming.SXSSFCell;
@@ -201,7 +202,7 @@ public class ExcelUtil <T>{
         fieldAndExcelList =new ArrayList<>();
         for (Field field : fields) {
             Excel excel = field.getAnnotation(Excel.class);
-            if (excel == null) {
+            if (excel == null||excel.excelType()== ExcelType.IS_IMPORT) {
                 continue;
             }
             height=excel.height()>height?excel.height():height;
@@ -217,12 +218,6 @@ public class ExcelUtil <T>{
             }
             String judgesStrValue = request.getParameter(excel.judgeStr());
             if (judgesStrValue != null) {
-                titleMergeCellNum -= 1;
-                //如果-1后没有可显示的字段时，计数归0，判断条件重置
-                if (titleMergeCellNum <= 0) {
-                    titleMergeCellNum = 0;
-                    isTitleMergeCellNum = true;
-                }
                 judgeStrMap.put(excel.judgeStr(), judgesStrValue);
                 continue;
             }
