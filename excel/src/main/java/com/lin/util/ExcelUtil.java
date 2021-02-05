@@ -4,6 +4,7 @@ import com.lin.annotation.Excel;
 import com.lin.enums.ExcelType;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.CellUtil;
 import org.apache.poi.xssf.streaming.SXSSFCell;
 import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
@@ -91,10 +92,27 @@ public class ExcelUtil <T>{
         this.clazz=clazz;
     }
 
+    /**
+     * 导出excel
+     * @param dataList
+     * @param fileName
+     * @param title
+     * @throws IllegalAccessException
+     */
     public void export(List<T> dataList,String fileName,String title) throws IllegalAccessException {
         export(ServletUtil.getRequest(),ServletUtil.getResponse(),dataList,fileName,"data",title);
     }
 
+    /**
+     * 导出excel
+     * @param request
+     * @param response
+     * @param dataList
+     * @param fileName
+     * @param sheetName
+     * @param title
+     * @throws IllegalAccessException
+     */
     public void export(HttpServletRequest request,HttpServletResponse response, List<T> dataList, String fileName, String sheetName,String title) throws IllegalAccessException {
         init(request,sheetName);
         //数据导入开始下标
@@ -124,7 +142,9 @@ public class ExcelUtil <T>{
                 if(judgeStrMap.get(excelObj.judgeStr())!=null){
                     continue;
                 }
-                createCell(fieldRow,i2,excelObj.name(),excelObj,fieldStyle);
+                SXSSFCell fieldCell=createCell(fieldRow,i2,fieldStyle);
+                fieldCell.setCellValue(excelObj.name());
+                //设置列宽
                 sheet.setColumnWidth(i2,excelObj.width()*256);
             }
             importData(dataList,rowBeginIndex);
@@ -172,6 +192,12 @@ public class ExcelUtil <T>{
         return s;
     }
 
+    /**
+     * 导入数据到excel中
+     * @param dataList
+     * @param beginIndex
+     * @throws IllegalAccessException
+     */
     private void importData(List<T> dataList,int beginIndex) throws IllegalAccessException {
         int dataListSize=dataList.size();
         //获取数据单元格样式
@@ -187,11 +213,17 @@ public class ExcelUtil <T>{
                 Field field=(Field) fieldAndExcelList.get(i2)[0];
                 field.setAccessible(true);
                 Object object=field.get(dataObj);
-                createCell(row,i2,object,(Excel) fieldAndExcelList.get(i2)[1],dataStyle);
+                SXSSFCell cell=createCell(row,i2,dataStyle);
+                setCellValue(cell,object,(Excel) fieldAndExcelList.get(i2)[1]);
             }
         }
     }
 
+    /**
+     * 初始化
+     * @param request
+     * @param sheetName
+     */
     private void init(HttpServletRequest request,String sheetName){
         createWorkbook();
         createSheet(sheetName);
@@ -205,6 +237,7 @@ public class ExcelUtil <T>{
             if (excel == null||excel.excelType()== ExcelType.IS_IMPORT) {
                 continue;
             }
+            //获取单元格最大高度
             height=excel.height()>height?excel.height():height;
             //判断是否为可选字段
             if (!excel.isOptional()) {
@@ -226,35 +259,85 @@ public class ExcelUtil <T>{
         }
     }
 
+    /**
+     * 创建工作蒲
+     */
     private void createWorkbook(){
         wb = new SXSSFWorkbook(300);
     }
 
+    /**
+     * 创建工作表
+     * @param sheetName
+     */
     private void createSheet(String sheetName){
         sheet=wb.createSheet(sheetName);
     }
 
+    /**
+     * 创建行
+     * @param index
+     * @return
+     */
     private SXSSFRow createRow(int index){
         return sheet.createRow(index);
     }
 
-    private void createCell(SXSSFRow row, int index,Object value,Excel excel,CellStyle cellStyle){
+    /**
+     * 创建单元格
+     * @param row
+     * @param index
+     * @param cellStyle
+     * @return
+     */
+    private SXSSFCell createCell(SXSSFRow row, int index,CellStyle cellStyle){
         row.setHeight((short) (height*20));
         SXSSFCell cell= row.createCell(index);
-        typeConvert(cell,value,excel);
         cell.setCellStyle(cellStyle);
-        //CellUtil.setCellStyleProperties(cell,null);
+        return cell;
     }
 
+    /**
+     * 设置单元格内容
+     * @param cell
+     * @param value
+     * @param excel
+     */
+    private void setCellValue(SXSSFCell cell,Object value,Excel excel){
+        if(value==null){
+            cell.setCellValue(excel.defaultValue());
+            return;
+        }
+        if("".equals(excel.valueConvert())){
+            typeConvert(cell,value,excel);
+            return;
+        }
+        cell.setCellValue((String) valueConvert(value,excel,true));
+    }
+
+    /**
+     * 简单的类型转换
+     * @param cell
+     * @param value
+     * @param excel
+     */
     private void typeConvert(SXSSFCell cell,Object value,Excel excel){
         if(value instanceof String){
             cell.setCellValue((String) value);
         }
         if(value instanceof LocalDate){
-            cell.setCellValue(((LocalDate)value).toString());
+            if ("".equals(excel.dateFormat())){
+                cell.setCellValue(DateUtil.localDateToStr((LocalDate)value));
+                return;
+            }
+            cell.setCellValue(DateUtil.localDateToStr((LocalDate)value,excel.dateFormat()));
         }
         if(value instanceof LocalDateTime){
-            cell.setCellValue(((LocalDateTime)value).toString());
+            if ("".equals(excel.dateFormat())){
+                cell.setCellValue(DateUtil.localDateTimeToStr((LocalDateTime)value));
+                return;
+            }
+            cell.setCellValue(DateUtil.localDateTimeToStr((LocalDateTime)value,excel.dateTimeFormat()));
         }
         if(value instanceof Double){
             cell.setCellValue((Double)value);
@@ -274,6 +357,33 @@ public class ExcelUtil <T>{
         if(value instanceof Boolean){
             cell.setCellValue((Boolean)value);
         }
+    }
+
+    /**
+     * 值转换
+     * @param fieldValue
+     * @param excel
+     * @param isExcel
+     * @return
+     */
+    private Object valueConvert(Object fieldValue,Excel excel,boolean isExcel){
+        String value=excel.valueConvert();
+        String [] values=value.split(",");
+        String separate=":";
+        for (String str:values){
+            String [] valArr=str.split(separate);
+            if(isExcel){
+                String ss=valArr[0];
+                if(ss.equals(String.valueOf(fieldValue))){
+                    return valArr[1];
+                }
+                continue;
+            }
+            if(valArr[1].equals(fieldValue)){
+                return valArr[0];
+            }
+        }
+        return "";
     }
 
     /**

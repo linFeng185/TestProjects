@@ -1,6 +1,6 @@
 package com.lin;
 
-import com.lin.entity.Entity;
+import com.lin.export.Entity;
 import com.lin.util.ExcelUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,17 +27,19 @@ public class Main {
     public String export() throws IllegalAccessException {
         ExcelUtil<Entity> util=new ExcelUtil<>(Entity.class);
         List<Entity> data=new ArrayList<>();
-        for (int i=0;i<10;i++){
+        for (int i=0;i<1000000;i++){
             Entity entity=new Entity();
             entity.setAge(i);
             entity.setBirthday(LocalDate.now());
             entity.setBodyWeight((double) i);
             entity.setName("名称"+i);
-            entity.setSex(1);
+            entity.setSex(i%2);
             entity.setTime(LocalDateTime.now());
             data.add(entity);
         }
+        System.out.println(LocalDateTime.now());
         util.export(data,"111.xlsx","标题");
+        System.out.println(LocalDateTime.now());
         return "SUCCESS";
     }
 

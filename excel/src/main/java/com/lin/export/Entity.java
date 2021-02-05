@@ -1,6 +1,7 @@
-package com.lin.entity;
+package com.lin.export;
 
 import com.lin.annotation.Excel;
+import com.lin.util.DateUtil;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -45,7 +46,7 @@ public class Entity {
     /**
      * 时间
      */
-    @Excel(name = "时间",isOptional = true,judgeStr = "isTime")
+    @Excel(name = "时间",isOptional = true,judgeStr = "isTime",dateTimeFormat = DateUtil.YYYY_MM_DD_HH_MM)
     private LocalDateTime time;
 
     public String getName() {
