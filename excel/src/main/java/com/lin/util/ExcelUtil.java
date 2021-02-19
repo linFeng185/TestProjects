@@ -471,9 +471,11 @@ public class ExcelUtil <T>{
             if(String.class==fieldType){
                 value=cell.getStringCellValue();
             }else if(LocalDate.class==fieldType){
-                value=DateUtil.strToLocalDate(cell.getStringCellValue());
+                Excel excel=field.getAnnotation(Excel.class);
+                value=DateUtil.strToLocalDate(cell.getStringCellValue(),excel.dateFormat());
             }else if(LocalDateTime.class==fieldType){
-                value=DateUtil.strToLocalDateTime(cell.getStringCellValue());
+                Excel excel=field.getAnnotation(Excel.class);
+                value=DateUtil.strToLocalDateTime(cell.getStringCellValue(),excel.dateTimeFormat());
             }else {
                 Excel excel=field.getAnnotation(Excel.class);
                 String val=cell.getStringCellValue();
