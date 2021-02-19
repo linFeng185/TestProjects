@@ -1,8 +1,11 @@
 package com.lin.util;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * @Author: lin
@@ -12,7 +15,7 @@ public class DateUtil {
 
     public static final String YYYY_MM_DD="yyyy-MM-dd";
     public static final String YYYY_MM_DD_HH_MM="yyyy-MM-dd HH:mm";
-    public static final String YYYY_MM_DD_HH_MM_SSS="yyyy-MM-dd HH:mm:sss";
+    public static final String YYYY_MM_DD_HH_MM_SS="yyyy-MM-dd HH:mm:ss";
 
     /**
      * 日期转字符串，默认格式为 yyyy-MM-dd
@@ -50,5 +53,43 @@ public class DateUtil {
      */
     public static String localDateTimeToStr(LocalDateTime dateTime,String dateTimeFormat){
         return dateTime.format(DateTimeFormatter.ofPattern(dateTimeFormat));
+    }
+
+    /**
+     * Date类型转LocalDate类型
+     * @param date
+     * @return
+     */
+    public static LocalDate dateToLocalDate(Date date){
+        Instant instant = date.toInstant();
+        ZoneId zoneId = ZoneId.systemDefault();
+        return instant.atZone(zoneId).toLocalDate();
+    }
+
+    /**
+     * Date类型转LocalDateTime类型
+     * @param date
+     * @return
+     */
+    public static LocalDateTime dateToLocalDateTime(Date date){
+        Instant instant = date.toInstant();
+        ZoneId zoneId = ZoneId.systemDefault();
+        return instant.atZone(zoneId).toLocalDateTime();
+    }
+
+    public static LocalDate strToLocalDate(String date){
+        return strToLocalDate(date,YYYY_MM_DD);
+    }
+
+    public static LocalDate strToLocalDate(String date,String format){
+        return LocalDate.parse(date,DateTimeFormatter.ofPattern(format));
+    }
+
+    public static LocalDateTime strToLocalDateTime(String date){
+        return strToLocalDateTime(date,YYYY_MM_DD_HH_MM);
+    }
+
+    public static LocalDateTime strToLocalDateTime(String date,String format){
+        return LocalDateTime.parse(date,DateTimeFormatter.ofPattern(format));
     }
 }

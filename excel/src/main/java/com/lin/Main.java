@@ -1,6 +1,8 @@
 package com.lin;
 
+import com.lin.enums.FileName;
 import com.lin.export.Entity;
+import com.lin.imports.ImportEntity;
 import com.lin.util.ExcelUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +25,7 @@ public class Main {
      * 导出
      * @return
      */
-    @GetMapping
+    @GetMapping("/export")
     public String export() throws IllegalAccessException {
         ExcelUtil<Entity> util=new ExcelUtil<>(Entity.class);
         List<Entity> data=new ArrayList<>();
@@ -38,7 +40,7 @@ public class Main {
             data.add(entity);
         }
         System.out.println(LocalDateTime.now());
-        util.export(data,"111.xlsx","标题");
+        util.export(data, FileName.TEST);
         System.out.println(LocalDateTime.now());
         return "SUCCESS";
     }
@@ -48,8 +50,11 @@ public class Main {
      * @param file 文件
      * @return
      */
-    @PostMapping
+    @PostMapping("/importData")
     public String importData(MultipartFile file){
+        ExcelUtil<ImportEntity> util=new ExcelUtil<>(ImportEntity.class);
+        List<ImportEntity> res=util.importExcel(file);
+        System.out.println(res);
         return "SUCCESS";
     }
 }
