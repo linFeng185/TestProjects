@@ -7,9 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDateTime;
 
 /**
- * @Author: linFeng
+ * @Author: lin
  * @Date: 2021/1/6 15:17
- * @Copyright: www.zektech.cn
  */
 @SpringBootApplication
 public class NacosApiApplication {

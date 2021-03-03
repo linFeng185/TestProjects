@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author: linFeng
+ * @Author: lin
  * @Date: 2021/1/6 15:45
- * @Copyright: www.zektech.cn
  */
 @RestController
 @RequestMapping("/config")
