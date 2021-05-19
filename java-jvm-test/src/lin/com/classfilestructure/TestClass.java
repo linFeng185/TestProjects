@@ -1,4 +1,4 @@
-package lin.com;
+package lin.com.classfilestructure;
 
 /**
  * 深入了解java虚拟机第六章：类文件结构
