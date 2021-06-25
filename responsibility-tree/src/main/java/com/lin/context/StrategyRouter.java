@@ -48,7 +48,7 @@ public abstract class StrategyRouter<P,R> {
     /**
      * 在类初始化时，会调用初始化类（也就是实现类）的registerStrategyMapper()方法获取到接口的实现
      */
-    protected StrategyMapper<P,R> strategyMapper;
+    private StrategyMapper<P,R> strategyMapper;
 
     /**
      * 类初始化时注册分发策略 Mapper
@@ -77,4 +77,8 @@ public abstract class StrategyRouter<P,R> {
      * @return 策略映射器
      */
     public abstract StrategyMapper<P,R> registerStrategyMapper();
+
+    public StrategyMapper<P,R> getStrategyMapper(){
+        return strategyMapper;
+    }
 }

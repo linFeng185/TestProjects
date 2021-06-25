@@ -26,7 +26,7 @@ public class StrategyRootNode extends StrategyRouter<ReqEntity, ResEntity>{
         return param -> {
             int type=param.getType();
             if(type==1){
-                return strategy1.strategyMapper.get(param);
+                return strategy1.getStrategyMapper().get(param);
             }
             if(type>1){
                 return strategy2;
